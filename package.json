@@ -1,0 +1,67 @@
+{
+    "name": "yaml-navigator",
+    "displayName": "YAML Navigator",
+    "description": "Enhance YAML file navigation with import resolution and anchor referencing.",
+    "version": "0.0.5",
+    "publisher": "Oliver Dirr",
+    "private": true,
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/31oli31/YAML-Navigator"
+    },
+    "engines": {
+        "vscode": "^1.94.2"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:yaml",
+        "onLanguage:yml"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "yaml",
+                "aliases": [
+                    "YAML"
+                ],
+                "extensions": [
+                    ".yaml",
+                    ".yml"
+                ]
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint",
+        "watch": "tsc -watch -p ./",
+        "format": "prettier --write '**/*.{js,json,md,ts,yaml}'"
+    },
+    "properties": {
+        "yamlExtension.enableLogging": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enable or disable logging for the YAML extension"
+        }
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.13.0",
+        "@stylistic/eslint-plugin": "^2.9.0",
+        "@types/js-yaml": "^4.0.9",
+        "@types/node": "^20",
+        "@types/vscode": "^1.73.0",
+        "eslint": "^9.13.0",
+        "typescript": "^5.6.2",
+        "typescript-eslint": "^8.11.0",
+        "prettier": "^2.8.3"
+    },
+    "dependencies": {
+        "js-yaml": "^4.1.0",
+        "yaml": "^2.6.0"
+    }
+}
