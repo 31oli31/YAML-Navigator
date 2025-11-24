@@ -2,7 +2,7 @@
     "name": "yaml-navigator",
     "displayName": "YAML Navigator",
     "description": "Enhance YAML file navigation with import resolution and anchor referencing.",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "publisher": "Oliver Dirr",
     "icon": "images/logo.png",
     "private": true,
