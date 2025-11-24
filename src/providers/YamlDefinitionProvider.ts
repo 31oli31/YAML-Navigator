@@ -36,6 +36,9 @@ export class YamlDefinitionProvider implements vscode.DefinitionProvider {
         }
 
         const wordRange = document.getWordRangeAtPosition(position);
+        if (!wordRange) {
+            return undefined;
+        }
         const word = document.getText(wordRange);
 
         this.logger.log(

@@ -2,8 +2,12 @@
     "name": "yaml-navigator",
     "displayName": "YAML Navigator",
     "description": "Enhance YAML file navigation with import resolution and anchor referencing.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "Oliver Dirr",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/31oli31/YAML-Navigator.git"
+    },
     "icon": "images/logo.png",
     "private": true,
     "license": "MIT",
