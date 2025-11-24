@@ -43,7 +43,13 @@ export class YamlDefinitionProvider implements vscode.DefinitionProvider {
         );
         this.logger.log(`Word at position: ${word}`);
 
-        if (!word.startsWith('*')) {
+        const start = wordRange.start
+        var anchorName;
+        if (word.startsWith('*')) {
+            anchorName = word.substring(1);
+        } else if (document.getText(wordRange.with(start.translate(0, -1), start)) === '*') {
+            anchorName = word
+        } else {
             this.logger.log('No anchor found (does not start with "*")');
             return undefined;
         }
@@ -58,7 +64,6 @@ export class YamlDefinitionProvider implements vscode.DefinitionProvider {
                 this.logger.log(`Reading file: ${fullPath}`);
                 const fileContent = fs.readFileSync(fullPath, 'utf8');
 
-                const anchorName = word.substring(1);
                 const anchorPattern = new RegExp(`&${anchorName}\\b`, 'm');
 
                 const match = fileContent.match(anchorPattern);
